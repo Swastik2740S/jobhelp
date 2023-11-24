@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Seeker Page</title>
+  <link rel="stylesheet" href="jobseeker.css">
+</head>
+<body>
+
+  <header>
+    <h1>Job Seeker Page</h1>
+  </header>
+
+  <section class="form-container">
+    <form id="jobSeekerForm">
+      <label for="jobSeekerName">Name:</label>
+      <input type="text" id="jobSeekerName" name="jobSeekerName" required>
+
+      <label for="jobSeekerAge">Age:</label>
+      <input type="number" id="jobSeekerAge" name="jobSeekerAge" required>
+
+      <label for="iqTest">Attach IQ Test (PDF, DOCX, or JPG):</label>
+      <input type="file" id="iqTest" name="iqTest" accept=".pdf, .docx, .jpg" required>
+
+      <button type="button" onclick="submitJobSeekerForm()">Submit</button>
+    </form>
+   <button><a href="iq.html"><i class="fas fa-user-tie"></i> PLEASE CHECK YOUR IQ LEVEL</a></button>
+
+  </section>
+
+</body>
+</html>

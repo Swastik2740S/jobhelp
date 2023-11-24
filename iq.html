@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic IQ Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #quiz-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>Basic IQ Test</h1>
+    <div class="question" id="question1">
+        <p>What is the result of 7 * 8?</p>
+        <input type="radio" name="q1" value="48"> 48
+        <input type="radio" name="q1" value="54"> 54
+        <input type="radio" name="q1" value="56"> 56
+        <input type="radio" name="q1" value="64"> 64
+    </div>
+
+    <div class="question" id="question2">
+        <p>If all cats are mammals and Fluffy is a cat, is Fluffy a mammal?</p>
+        <input type="radio" name="q2" value="yes"> Yes
+        <input type="radio" name="q2" value="no"> No
+    </div>
+
+    <div class="question" id="question3">
+        <p>What comes next in the sequence: 2, 4, 8, 16, ___?</p>
+        <input type="radio" name="q3" value="24"> 24
+        <input type="radio" name="q3" value="32"> 32
+        <input type="radio" name="q3" value="64"> 64
+        <input type="radio" name="q3" value="128"> 128
+    </div>
+
+    <button onclick="calculateScore()">Submit Answers</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateScore() {
+        var score = 0;
+
+        // Question 1
+        var q1Answer = document.querySelector('input[name="q1"]:checked');
+        if (q1Answer && q1Answer.value === "56") {
+            score++;
+        }
+
+        // Question 2
+        var q2Answer = document.querySelector('input[name="q2"]:checked');
+        if (q2Answer && q2Answer.value === "yes") {
+            score++;
+        }
+
+        // Question 3
+        var q3Answer = document.querySelector('input[name="q3"]:checked');
+        if (q3Answer && q3Answer.value === "32") {
+            score++;
+        }
+
+        // Display result
+        var resultContainer = document.getElementById("result");
+        resultContainer.innerHTML = "You scored " + score + " out of 3.";
+    }
+</script>
+
+</body>
+</html>
